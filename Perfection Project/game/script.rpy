@@ -13,24 +13,24 @@ image bg blur = "blurryroom.jpg"
 # Declare images below this line, using the image statement.
 # eg. image eileen happy = "eileen_happy.png"
 
-image kat normal = "KatUNormal.png"
-image kat normal2 = "KatUNormal2.png"
-image kat normal3 = "KatUNormal3.png"
-image kat normal4 = "KatUNormal4.png"
+image kat normal color me = "KatUNormal.png"
+image kat normal color away = "KatUNormal2.png"
+image kat normal black me = "KatUNormal3.png"
+image kat normal black away = "KatUNormal4.png"
 
-image kat angry = "KatUAngry.png"
-image kat angry2 = "KatUAngry2.png"
-image kat angry3 = "KatUAngry3.png"
-image kat angry4 = "KatUAngry4.png"
-image kat angry5 = "KatUAngry5.png"
-image kat angry6 = "KatUAngry6.png"
-image kat angry7 = "KatUAngry7.png"
-image kat angry8 = "KatUAngry8.png"
+image kat angry color me = "KatUAngry.png"
+image kat angry color away = "KatUAngry2.png"
+image kat angry black me = "KatUAngry3.png"
+image kat angry black away = "KatUAngry4.png"
+image kat angry color me teeth = "KatUAngry5.png"
+image kat angry color away teeth = "KatUAngry6.png"
+image kat angry black me teeth = "KatUAngry7.png"
+image kat angry black away teeth = "KatUAngry8.png"
 
-image kat smilel = "KatUSmile.png"
-image kat smile2 = "KatUSmile2.png"
-image kat smile3 = "KatUSmile3.png"
-image kat smile4 = "KatUSmile4.png"
+image kat smile color me = "KatUSmile.png"
+image kat smile color away = "KatUSmile2.png"
+image kat smile black me = "KatUSmile3.png"
+image kat smile black away = "KatUSmile4.png"
 
 # Declare characters used by this game.
 define z = Character('Zen')
@@ -55,7 +55,8 @@ label start:
     
     "I can hear the hungover moans of a girl beside me"
     
-    show kat angry8
+    show kat angry black away teeth:
+        right
     with dissolve
     
     k "\"What. The Fuck. Did we do last night?\""
@@ -70,7 +71,9 @@ label start:
     
     z "\"I have good reason to believe that nothing happened last night.\""
     
-    show kat angry3
+    show kat angry black me:
+        right
+    with dissolve
     
     "The girl looks over to my wallet"
     
@@ -81,15 +84,68 @@ label start:
     z "\"Well, for starters...\""
     
     scene bg room
-    show kat angry3
+    show kat angry black away:
+        right
     with dissolve
     
     z "\"We're sleeping in separate beds.\""
     
-    show kat normal4
+    show kat normal black away:
+        right
     with dissolve
     
     k "\"Hmmm.\""
+    
+    show kat normal black me:
+        right
+    with dissolve
+    show kat normal black away:
+        right
+    with dissolve
+    show kat normal black me:
+        right
+    with dissolve
+    show kat normal black away:
+        right
+    with dissolve
+    
+    "She seems to be regaining her sight."
+    
+    show kat normal black away:
+        right
+        yalign 1.0
+        linear .2 yalign 1.2
+        linear .2 yalign 1.0
+        linear .2 yalign 1.2
+        linear .2 yalign 1.0
+
+
+    
+    "She starts patting herself around."
+    
+    "I think she's trying to see if she feels weird anywhere."
+    
+    "I think she realized for sure nothing happened."
+    
+    show kat angry black me
+    with dissolve
+    
+    k "\"I don't really feel like analyzing anything right now.\""
+    
+    k "\"I'm going back to sleep.\""
+    
+    show kat normal black me
+    with dissolve
+    
+    k "\"Go ahead and just leave me here.\""
+    
+    k "\"I can find my way home by myself.\""
+    
+    "She said in a pretty nonchalant way."
+    
+    "She sounds pretty independent."
+    
+    hide kat normal black me
     
 
     return
