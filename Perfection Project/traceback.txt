@@ -1,36 +1,70 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 138, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 319, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 327, in <module>
-    ui.interact(suppress_underlay=True, suppress_overlay=True)
-Exception: Could not set video mode.
+IOError: Couldn't find file 'blur.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 138, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 319, in script
-    python hide:
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
   File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\ast.py", line 785, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\python.py", line 1382, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "renpy/common/00keymap.rpy", line 327, in <module>
-    ui.interact(suppress_underlay=True, suppress_overlay=True)
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
+    $ ui.interact()
   File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\ui.py", line 247, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\core.py", line 2149, in interact
     repeat, rv = self.interact_core(preloads=preloads, **kwargs)
-  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\core.py", line 2447, in interact_core
-    self.set_mode()
-  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\core.py", line 1646, in set_mode
-    raise Exception("Could not set video mode.")
-Exception: Could not set video mode.
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\core.py", line 2478, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\core.py", line 1677, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 363, in renpy.display.render.render_screen (gen\renpy.display.render.c:5330)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\layout.py", line 618, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\transition.py", line 176, in render
+    renpy.display.render.render(self.transitions[-1], width, height, 0, 0)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\transition.py", line 362, in render
+    top = render(self.new_widget, width, height, st, at)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\layout.py", line 618, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\layout.py", line 618, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\screen.py", line 598, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\layout.py", line 618, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\layout.py", line 984, in render
+    back = render(style.background, bw, bh, st, at)
+  File "render.pyx", line 98, in renpy.display.render.render (gen\renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen\renpy.display.render.c:2537)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\im.py", line 465, in render
+    im = cache.get(self)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\im.py", line 198, in get
+    surf = image.load()
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\display\im.py", line 509, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Shared Programs\Renpy\renpy-6.18.3-sdk\renpy\loader.py", line 438, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'blur.jpg'.
 
 Windows-post2008Server-6.2.9200
 Ren'Py 6.18.3.761
