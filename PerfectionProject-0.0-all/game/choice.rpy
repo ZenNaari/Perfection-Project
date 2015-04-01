@@ -44,3 +44,6 @@ label choice:
         
             if holly_story==3:
                 call alpha
+        
+        "Skip to Kat's Chapter 3":
+            call kat3

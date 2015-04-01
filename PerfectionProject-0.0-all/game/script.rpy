@@ -25,6 +25,9 @@ init:
     image bg dorm = "bg/room2.jpg"
     image bg class = "bg/classroom.jpg"
     image bg cafe = "bg/cafe.jpg"
+    image bg counter = "bg/counter.jpg"
+    image bg booth = "bg/booth.jpg"
+    image bg outside = "bg/outside.jpg"
     
     image white = "bg/white.png"
     
@@ -110,9 +113,32 @@ init:
     image kitty me excited n = "kitty/KittyMeExitedN.png"
     image kitty away excited n = "kitty/KittyAwayExitedN.png"
     
+    #~~~ images of Mary
+    image mary me smile n = "mary/MaryMeSmileN.png"
+    image mary away smile n = "mary/MaryAwaySmileN.png"
+    image mary me normal n = "mary/MaryMeNormalN.png"
+    image mary away normal n = "mary/MaryAwayNormalN.png"
+    image mary me mad n = "mary/MaryMeMadN.png"
+    image mary away mad n = "mary/MaryAwayMadN.png"
+    image mary me excited n = "mary/MaryMeExcitedN.png"
+    image mary away excited n = "mary/MaryAwayExcitedN.png"
+    
     #~~~ images of Sherman
     image sherman smile = "ShermanSmile.png"
     image sherman normal = "ShermanNormal.png"
+    
+    #~~~images of Ling
+    image ling me smile n = "ling/LingMeSmileN.png"
+    image ling me normal n = "ling/LingMeNormalN.png"
+    image ling me mad n = "ling/LingMeMadN.png"
+    image ling me angry n = "ling/LingMeAngryN.png"
+    
+    image ling away smile n = "ling/LingAwaySmileN.png"
+    image ling away normal n = "ling/LingAwayNormalN.png"
+    image ling away mad n = "ling/LingAwayMadN.png"
+    image ling away angry n = "ling/LingAwayAngryN.png"
+    
+    image ling away smile n flip = im.Flip("ling/LingAwaySmileN.png", horizontal=True)
     
 # Define some transistions
 define slideright = CropMove(0.3, "slideright")
@@ -126,16 +152,19 @@ define wipeleft = CropMove(0.5, "wipeleft")
 
 # Declare characters used by this game.
 define z = Character('Zen', show_two_window=True)
-define k = Character(_('Kat'), color = "#00EEEE", show_two_window=True )
+define k = Character(('Kat'), color = "#00EEEE", show_two_window=True )
 define c = Character(('Chris'), color = "#EE0000", show_two_window=True)
 define h = Character(('Holly'), color = "#FFFF00", show_two_window=True)
 define ki = Character(('Kitty'), color = "#800000", show_two_window=True)
+define m = Character(('Mary'), color = "#00FF7F", show_two_window=True)
+define l = Character(('Ling'), color = "#00FF00", show_two_window=True)
 
 define he = Character(('Henry'), color = "#3D9140", show_two_window=True)
 define sh = Character(('Sherman'), color = "#3D9140", show_two_window=True)
 
 define cab = Character('Cab Driver', show_two_window=True)
 define pro = Character('Professor', show_two_window=True)
+define bar = Character('Bartender', show_two_window=True)
 
 transform hop():
     linear .2 yalign 1.2
@@ -148,6 +177,7 @@ transform hop2():
 
 init:
     $day = 0
+    $night = 0
     $kat_love = 0
     $kitty_story = 0
     $kitty_love = 0
@@ -173,9 +203,9 @@ label start:
 
     "I am so hungover."
     
-    "What... happened last night?"
+    "What...{w} happened last night?"
     
-    "I can hardly make out my surroundings."
+    "Where...{w} the fuck am I?"
     
     k "Aauugghh!"
     
@@ -185,7 +215,7 @@ label start:
         right
     with dissolve
     
-    k "What.{w} The Fuck.{w} Did we do last night?"
+    k "What...{w} The Fuck...{w} Did we do last night?"
     
     "I look around the room a little bit."
     
@@ -213,7 +243,7 @@ label start:
         right
     with dissolve
     
-    z "We're sleeping on separate beds."
+    z "We're on separate beds."
     
     show kat away normal u black
     with dissolve

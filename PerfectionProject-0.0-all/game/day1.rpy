@@ -430,7 +430,7 @@ label day1:
     
     c "Just some casual drinking."
     
-    c "Zen here likes going to the bar at Beachside uni just to drink and think about stuff."
+    c "Zen here likes going to the bar at BSU just to drink and think about stuff."
     
     c "It gets entertaining sometimes."
     

@@ -980,7 +980,7 @@ label kitty1:
     scene bg black
     with fade
     
-    call night1
+    call night
     
     jump choice
     

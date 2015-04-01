@@ -1121,6 +1121,8 @@ label holly1:
     
     call classday
     
+    call night
+    
     jump choice
     
     return
